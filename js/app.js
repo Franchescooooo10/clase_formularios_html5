@@ -19,6 +19,22 @@ function mostrarDatos(){
   }
 }
 
+function mostrarCodigo(tipo, boton){
+  let paneles = document.querySelectorAll(".code-panel");
+  let botones = document.querySelectorAll(".code-tab");
+
+  paneles.forEach(function(panel){
+    panel.classList.remove("active");
+  });
+
+  botones.forEach(function(btn){
+    btn.classList.remove("active");
+  });
+
+  document.getElementById("codigo-" + tipo).classList.add("active");
+  boton.classList.add("active");
+}
+
 function subirArriba(){
   window.scrollTo({
     top:0,
