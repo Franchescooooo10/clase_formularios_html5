@@ -9,6 +9,7 @@
 <body>
 
   <header class="hero" id="inicio">
+
     <nav class="navbar">
       <div class="brand">
         <div class="html-logo">
@@ -26,6 +27,7 @@
         <a href="#teoria">Teoría</a>
         <a href="#etiquetas">Etiquetas</a>
         <a href="#demo">Demo</a>
+        <a href="#codigo-demo">Código</a>
         <a href="#actividad">Actividad</a>
       </div>
     </nav>
@@ -64,6 +66,7 @@
         <div class="floating-card card-3">button</div>
       </article>
     </section>
+
   </header>
 
   <main>
@@ -133,7 +136,9 @@
       <div class="section-title">
         <span>02</span>
         <h2>¿Qué es un formulario?</h2>
-        <p>Un formulario permite que el usuario ingrese información dentro de una página web.</p>
+        <p>
+          Un formulario permite que el usuario ingrese información dentro de una página web.
+        </p>
       </div>
 
       <div class="cards-3">
@@ -302,10 +307,120 @@
       </div>
     </section>
 
+    <section id="codigo-demo" class="section ver-codigo">
+      <div class="section-title white">
+        <span>06</span>
+        <h2>Código del demo</h2>
+        <p>
+          Aquí pueden ver el código del ejemplo básico para realizarlo en su laptop.
+        </p>
+      </div>
+
+      <div class="code-tabs">
+        <button class="code-tab active" onclick="mostrarCodigo('html', this)">Ver HTML</button>
+        <button class="code-tab" onclick="mostrarCodigo('css', this)">Ver CSS</button>
+        <button class="code-tab" onclick="mostrarCodigo('js', this)">Ver JS</button>
+      </div>
+
+      <div class="code-viewer">
+
+        <pre id="codigo-html" class="code-panel active"><code>&lt;section class="demo-form-card"&gt;
+  &lt;h3&gt;Formulario básico&lt;/h3&gt;
+  &lt;p&gt;Completa los campos y presiona el botón.&lt;/p&gt;
+
+  &lt;form&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" placeholder="Escribe tu nombre"&gt;
+
+    &lt;label for="edad"&gt;Edad:&lt;/label&gt;
+    &lt;input type="number" id="edad" placeholder="Escribe tu edad"&gt;
+
+    &lt;button type="button" onclick="mostrarDatos()"&gt;Mostrar datos&lt;/button&gt;
+  &lt;/form&gt;
+
+  &lt;div id="resultado" class="resultado"&gt;
+    Aquí aparecerá la información capturada.
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+        <pre id="codigo-css" class="code-panel"><code>.demo-form-card{
+  background:white;
+  border-radius:30px;
+  padding:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.22);
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+
+label{
+  font-weight:bold;
+  color:#333;
+}
+
+input{
+  padding:14px;
+  border:2px solid #eee;
+  border-radius:14px;
+  font-size:1rem;
+}
+
+input:focus{
+  outline:none;
+  border-color:#e34f26;
+  box-shadow:0 0 0 4px rgba(227,79,38,0.13);
+}
+
+button{
+  margin-top:10px;
+  border:none;
+  padding:15px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#e34f26,#f16529);
+  color:white;
+  font-weight:bold;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.resultado{
+  background:#fff3ef;
+  border-radius:20px;
+  padding:20px;
+  min-height:100px;
+  line-height:1.7;
+}</code></pre>
+
+        <pre id="codigo-js" class="code-panel"><code>function mostrarDatos(){
+  let nombre = document.getElementById("nombre").value.trim();
+  let edad = document.getElementById("edad").value.trim();
+  let resultado = document.getElementById("resultado");
+
+  if(nombre === "" || edad === ""){
+    resultado.innerHTML = "⚠️ Por favor completa todos los campos.";
+    resultado.style.background = "#ffe0d6";
+    resultado.style.border = "2px solid #e34f26";
+  } else {
+    resultado.innerHTML =
+      "&lt;strong&gt;✅ Datos capturados correctamente:&lt;/strong&gt;&lt;br&gt;&lt;br&gt;" +
+      "Nombre: " + nombre + "&lt;br&gt;" +
+      "Edad: " + edad + " años";
+
+    resultado.style.background = "#e8ffe8";
+    resultado.style.border = "2px solid #2ecc71";
+  }
+}</code></pre>
+
+      </div>
+    </section>
+
     <section class="section codigo-js">
       <div class="section-title">
-        <span>06</span>
-        <h2>JavaScript del ejemplo</h2>
+        <span>07</span>
+        <h2>Explicación de JavaScript</h2>
         <p>Este código lee los datos, valida campos vacíos y muestra el resultado.</p>
       </div>
 
@@ -328,7 +443,7 @@
 
     <section id="actividad" class="section actividad">
       <div class="section-title">
-        <span>07</span>
+        <span>08</span>
         <h2>Actividad para alumnos</h2>
         <p>Crear un formulario completo de mínimo 6 campos.</p>
       </div>
