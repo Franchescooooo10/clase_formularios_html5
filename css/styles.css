@@ -57,16 +57,19 @@ body{
 }
 
 .navbar{
-  position:sticky;
+  position:fixed;
   top:0;
-  z-index:1000;
+  left:0;
+  right:0;
+  z-index:2000;
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:20px;
-  padding:18px 35px;
-  background:rgba(31,31,31,0.35);
-  backdrop-filter:blur(16px);
+  padding:14px 35px;
+  background:rgba(31,31,31,0.88);
+  backdrop-filter:blur(18px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.22);
 }
 
 .brand{
@@ -695,6 +698,18 @@ button:hover{
   .section{
     padding:55px 22px;
   }
+  html{
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
+}
+
+.section{
+  scroll-margin-top:110px;
+}
+
+.hero-content{
+  padding-top:120px;
+}
 
   .menu{
     justify-content:center;
