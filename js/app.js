@@ -31,8 +31,12 @@ function mostrarCodigo(tipo, boton){
     btn.classList.remove("active");
   });
 
-  document.getElementById("codigo-" + tipo).classList.add("active");
-  boton.classList.add("active");
+  let panelActivo = document.getElementById("codigo-" + tipo);
+
+  if(panelActivo){
+    panelActivo.classList.add("active");
+    boton.classList.add("active");
+  }
 }
 
 function subirArriba(){
