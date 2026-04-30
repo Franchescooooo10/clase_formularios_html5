@@ -18,6 +18,7 @@
 
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:120px;
 }
 
 body{
@@ -122,12 +123,12 @@ body{
 }
 
 .hero-content{
-  min-height:calc(100vh - 100px);
+  min-height:100vh;
   display:grid;
   grid-template-columns:1.1fr 0.9fr;
   align-items:center;
   gap:40px;
-  padding:55px 40px;
+  padding:150px 40px 55px;
   position:relative;
   z-index:2;
 }
@@ -288,6 +289,7 @@ body{
 .section{
   padding:70px 40px;
   background:white;
+  scroll-margin-top:120px;
 }
 
 .section:nth-child(even){
@@ -588,6 +590,67 @@ button:hover{
   color:#444;
 }
 
+.ver-codigo{
+  background:#111827 !important;
+}
+
+.ver-codigo .section-title h2,
+.ver-codigo .section-title p{
+  color:white;
+}
+
+.code-tabs{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:22px;
+}
+
+.code-tab{
+  border:none;
+  padding:12px 18px;
+  border-radius:999px;
+  background:#2d2d2d;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.code-tab:hover,
+.code-tab.active{
+  background:linear-gradient(135deg,#e34f26,#f16529);
+  transform:translateY(-3px);
+}
+
+.code-viewer{
+  max-width:1000px;
+  margin:auto;
+  background:#0b1220;
+  border-radius:26px;
+  padding:22px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.code-panel{
+  display:none;
+  color:#dbeafe;
+  overflow:auto;
+  white-space:pre-wrap;
+  line-height:1.7;
+  font-size:0.95rem;
+}
+
+.code-panel.active{
+  display:block;
+}
+
+.code-panel code{
+  font-family:Consolas, monospace;
+}
+
 .actividad-grid{
   max-width:1100px;
   margin:auto;
@@ -662,6 +725,7 @@ button:hover{
 @media(max-width:950px){
   .navbar{
     flex-direction:column;
+    align-items:flex-start;
   }
 
   .hero-content,
@@ -679,9 +743,21 @@ button:hover{
   .hero-panel{
     min-height:330px;
   }
+
+  .hero-content{
+    padding-top:210px;
+  }
 }
 
 @media(max-width:620px){
+  html{
+    scroll-padding-top:190px;
+  }
+
+  .section{
+    scroll-margin-top:190px;
+  }
+
   .hero-text h2{
     font-size:3rem;
   }
@@ -698,20 +774,8 @@ button:hover{
   .section{
     padding:55px 22px;
   }
-  html{
-  scroll-behavior:smooth;
-  scroll-padding-top:110px;
-}
-
-.section{
-  scroll-margin-top:110px;
-}
-
-.hero-content{
-  padding-top:120px;
-}
 
   .menu{
-    justify-content:center;
+    justify-content:flex-start;
   }
 }
